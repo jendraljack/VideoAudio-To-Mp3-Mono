@@ -13,7 +13,7 @@ cat $folder/info3.log|grep -i "kb/s"|busybox awk '{print $1}' > $folder/kbps
 bitrate="$(cat $folder/kbps)k"
 busybox echo -e "Media info\n\n$(cat $folder/info.log)\n\n"
 echo "Build new script..."
-sleep 4
+sleep 1
 echo "#!/system/bin/sh" > $folder/02-$(basename $0)
 echo "ffmpeg -i \"$@\" -ac 1 -ab $bitrate $(dirname $@)/Output-$(date +%s).mp3" >> $folder/02-$(basename $0)
 $(readlink /proc/$$/exe) "$folder/02-$(basename $0)"
