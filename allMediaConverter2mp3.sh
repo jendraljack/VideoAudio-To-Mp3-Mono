@@ -39,7 +39,8 @@ fi
 #####
 if [ ! -z "$folsek/media.log" ]
 then
+cat $folsek/media.log|busybox sort -n > $folsek/mediaflo.log
 echo "#!/system/bin/sh" > $folsek/02-$(basename $0)
-cat $folsek/media.log|busybox awk -v path=$folsek '{print "\$(readlink /proc/\$\$/exe) " path"/media2mp3mono.sh " $0"\nrm "$0}' >> $folsek/02-$(basename $0)
+cat $folsek/mediaflo.log|busybox awk -v path=$folsek '{print "\$(readlink /proc/\$\$/exe) " path"/media2mp3mono.sh " $0 "\nbusybox echo -e \"\\nKonversi " $0 " selesai dan dihapus.\\n\"\nrm "$0}' >> $folsek/02-$(basename $0)
 sh $folsek/02-$(basename $0)
 fi
