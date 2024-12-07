@@ -6,6 +6,6 @@ lihat cara memasang ffmpeg pada<br/>
 Untuk mengkonversi 1 berkas, gunakan<br/>
 <pre>$ bash media2mp3mono.sh "jalur/media.*"</pre>
 <br/>
-Untuk mengkonversi lebih dari satu media dalam folder,gunakan <br/>
-<pre>$ bash allMediaConverter2mp3.sh "path/folder yang ada media vieo/audio"</pre>
+Untuk mengkonversi lebih dari 1 media dalam 1 folder/sub folder,gunakan <br/>
+<pre>$ bash allMediaConverter2mp3.sh "path/folder yang ada media video/audio"</pre>
 TY
